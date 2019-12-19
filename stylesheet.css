@@ -1,0 +1,495 @@
+* {
+  margin:0;
+  padding:0;
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  background-color:#dadada;
+}
+
+.container{
+  max-width:1140px;
+  width:90%;
+  margin:0 auto;
+  }
+
+a{
+  text-decoration:none;
+}
+
+ul li{
+  list-style: none;
+}
+
+/* HEADER */
+
+header{
+  padding:1.5em 0;
+  background-color:#000;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:2;
+}
+
+header .menu {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .menu ul{
+  display: flex;
+}
+
+header .menu ul li{
+  padding-left:2em;
+}
+
+header a{
+  color:#fff;
+  padding:0.5em;
+}
+
+header .logo a{
+  font-size:1.5em;
+  letter-spacing: 1.75px;
+}
+
+header .close-menu-btn,
+header .open-menu{
+  border:none;
+  background-color:#000;
+  color:#fff;
+  font-size:30px;
+  cursor:pointer;
+}
+
+header .container .open-menu{
+  display: none;
+}
+/* FIN HEADER */
+/* OVERLAY MENU */
+
+header .overlay-menu{
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+header .overlay-content{
+  width: 100%;
+  text-align: center;
+  margin-top: 50%;
+}
+
+header .overlay-content ul li{
+  margin: 25px 0;
+  font-size: 26px;
+  color: #818181;
+  transition: 0.3s;
+}
+
+header .overlay-content ul li a{
+  padding:2% 10%;
+}
+
+.overlay-menu .close-menu-btn {
+  position: absolute;
+  top: 10px;
+  right: 35px;
+  font-size: 30px;
+}
+
+/* FIN OVERLAY MENU */
+/* BANNER - TÍTULO */
+
+.banner{
+  background:linear-gradient(#000000a2,#ad121238),url(img/home2.jpg);
+  max-width:100%;
+  background-size:cover;
+  background-attachment: fixed;
+  height:100vh;
+  display:flex;
+}
+ 
+.banner-text{
+  text-align:center;
+  align-self:center;
+  margin:0 auto;
+  margin-bottom:90px;
+  line-height:1.6;
+}
+
+h1,h2{
+  color:#fff;  
+}
+
+h1{
+  font-size:52px;
+}
+
+h2{
+  font-size:28px;
+  font-weight:200;
+}
+
+/* FIN BANNER - TÍTULO */
+h3{
+  text-align:center;
+  padding:3em 0 2em 0;
+  font-size:26px;
+}
+/* Sobre Mi */
+.sobreMi{
+  display:flex;
+  justify-content: center;
+}
+
+.sobreMi-img{
+  flex:0 1 50%;
+  text-align: center;
+}
+
+.sobreMi-img img{
+  max-width: 70%;
+  border-radius:10px;
+}
+
+.sobreMi-text{
+  flex:0 1 40%;
+}
+
+.sobreMi-text p span{
+  display:block;
+  margin:2em 0;
+}
+
+.sobreMi-text p{
+  line-height: 1.5;
+}
+/* Fin Sobre Mi */
+
+/* Trabajos */
+main .categorias{
+  display:flex;
+  justify-content: center;
+}
+
+main .categorias a{
+  color:#000;
+  margin:20px 20px;
+  font-size:18px;
+  font-weight: 500;
+  padding:0 10px;
+  border-bottom:3px solid transparent;
+  transition:border-bottom 0.2s;
+}
+
+.categorias a.active{
+  transition:border-bottom 0.2s ease-in-out;
+  border-bottom:3px solid #000;
+}
+
+/*Grid Muuri*/
+.grid{
+  position:relative;
+  width:100%;
+  opacity:0;
+  transition:opacity 0.5s linear 1s;
+}
+
+.grid.loaded{
+  opacity:1;
+}
+
+.grid .item{
+  position:absolute;
+  padding:0;
+  margin:15px 15px 15px 15px;
+  width:30%;
+}
+.grid .item-container :hover{
+box-shadow:2px 2px 25px rgb(88, 88, 88);
+transition:box-shadow 0.2s ease-in-out;
+cursor:pointer;
+}
+
+.grid .item-container{
+  position: relative;
+}
+
+.grid .item .item-container img{
+  width:100%;
+}
+
+/* FIN Grid Muuri */
+
+/* OVERLAY */
+
+.overlay{
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(0,0,0,0.8);
+  width:100%;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+
+.container-img{
+  position: relative;
+}
+
+.overlay #closebtn{
+  background:none;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  font-size:28px;
+  position:absolute;
+  top:-2em;
+  right:-0.5em;
+}
+
+.overlay.active{
+  display:flex;
+  z-index:2;
+}
+
+.container-img img{
+  max-width:calc((100vh - 175px) * 0.666667);
+}
+
+.overlay .descripcion{
+  display:block;
+  text-align:center;
+  background:#fff;
+  border-radius:10px;
+  font-size:0.85em;
+  padding:20px;
+  max-width:30%;
+}
+
+/* CONTACTO */
+
+label{
+  display: none;
+}
+
+#contacto form{
+  max-width:70%;
+  margin:0 auto;
+ }
+
+#contacto .formulario{
+  width:100%;
+}
+
+#contacto .name{
+  display: flex;
+  justify-content: space-between;
+}
+
+#contacto .name input{
+  width:48%;
+}
+
+#contacto input{
+  height: 45px;
+}
+
+#contacto textarea{
+  height:90px;
+}
+
+#contacto textarea,
+#contacto input{
+  width:100%;
+  margin:10px 0;
+}
+
+#contacto textarea,
+#contacto input{
+  border: 2px solid #ccc;
+  transition: 0.5s border;
+  outline: none;
+  box-sizing: border-box;
+  padding:16px 16px;
+}
+
+#contacto textarea::placeholder,
+#contacto input::placeholder{
+  font-family: 'Montserrat', sans-serif;
+  font-size:1.25em;
+}
+
+#contacto input.btn-submit{
+  font-family: 'Montserrat', sans-serif;
+  text-transform:uppercase;
+  display:block;
+  width:40%;
+  margin:0 auto;
+  padding:0;
+  background-color:#000;
+  color:#fff;
+  letter-spacing: 1px;
+  transition: letter-spacing 0.3s;
+}
+
+#contacto input.btn-submit:hover{
+  cursor:pointer;
+  letter-spacing: 2.5px;
+  transition: letter-spacing 0.3s;
+}
+
+#contacto textarea:focus,
+#contacto input:focus {
+  border: 2px solid #00000094;
+}
+
+footer{
+  text-align:center;
+  padding: 2rem 1rem;
+  margin-top:6em;
+  background-color:#001;
+}
+
+footer .icons{
+  display:flex;
+  justify-content: center;;
+}
+
+footer img{
+  width:30px;
+  margin:0 25px;
+  transform:rotate(0);
+  transition:0.6s;
+}
+
+footer img:hover{
+  transform:rotate(360deg);
+  transition:0.6s;
+  cursor:pointer;
+}
+
+footer p{
+  color:#fff;
+  padding:2em;
+}
+
+@media screen and (max-width:992px){
+  .grid .item{
+    width:40%;
+    margin:15px 15px 15px 6% ;
+  }
+
+  .sobreMi-img img{
+    max-width:80%;
+  }
+
+}
+@media screen and (max-width:768px){
+
+  .sobreMi{
+    flex-direction: column;
+  }
+
+  .sobreMi-img{
+    text-align: center;
+    order:0;
+  }
+
+  .sobreMi-text{
+    order:1;
+    margin-top:2em;
+    max-width:80%;
+    margin:0 auto;
+    padding-top:2em;
+  }
+
+  .sobreMi-img img{
+    max-width:60%;
+  }
+  
+
+}
+@media screen and (max-width:576px){
+  .container{
+    width:100%
+  }
+
+  header{
+    padding:0.5em;
+  }
+
+  h1 {
+    font-size: 42px;
+  } 
+
+  h2{
+    font-size:24px;
+  }
+
+  .grid .item{
+    width:calc(70% - 30px);
+    margin:15px 15px 15px 19%;
+  }
+
+  header .menu nav ul{
+    display: none;
+  }
+
+  header .container .open-menu{
+    display: block;
+  }
+
+  #contacto .name {
+  flex-direction: column;
+  }
+  
+  #contacto form {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  #contacto .name input {
+    width: 100%;  
+  }
+
+  .overlay-menu .close-menu-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 30px;
+  }
+
+  .overlay .descripcion {
+    padding: 10px;
+    max-width: 90%;
+  }
+}
+/* Si hacemos resize para achicar la ventana y luego la volvemos a agrandar 
+con el menú abierto, este menú overlay se va a cerrar automaticamente. */
+
+@media screen and (min-width:577px){
+  header .overlay-menu{
+    height:0%!important;
+    overflow-y: hidden;
+  }
+}
+
+
